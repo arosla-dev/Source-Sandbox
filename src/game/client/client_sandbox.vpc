@@ -37,6 +37,7 @@ $Project "Client (Sandbox)"
 			$File	"sandbox\c_sdk_player.h"
 			$File	"sandbox\c_sdk_player.cpp"
 			$File	"sandbox\c_weapon__stubs.cpp"
+			$File	"sandbox\c_te_flare.cpp"
 			
 			$File	"sandbox\hud_crosshair_sandbox.cpp"
 			$File	"sandbox\hud_damageindicator.cpp"

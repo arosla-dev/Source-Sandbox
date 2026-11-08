@@ -478,6 +478,7 @@ $Project
 		$File	"iservervehicle.h"
 		$File	"item_world.cpp"
 		$File	"items.h"
+		$File	"item_ammo.cpp"
 		$File	"$SRCDIR\public\ivoiceserver.h"
 		$File	"$SRCDIR\public\keyframe\keyframe.h"
 		$File	"lightglow.cpp"

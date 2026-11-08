@@ -859,6 +859,8 @@ $Project
 		$File	"weapon_selection.h"
 		$File	"weapons_resource.h"
 		$File	"vgui_video.h"
+		$File	"clienteffectprecachesystem.cpp"
+		$File	"clienteffectprecachesystem.h"
 	}
 
 	$Folder	"Public Header Files"

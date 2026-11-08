@@ -92,9 +92,7 @@ CAmmoDef* GetAmmoDef()
 	if ( !bInitted )
 	{
 		bInitted = true;
-		def.AddAmmoType("Pistol",	DMG_BULLET,		TRACER_LINE_AND_WHIZ, "sk_plr_dmg_pistol",	"sk_npc_dmg_pistol", "sk_max_pistol", BULLET_IMPULSE(200, 1225), 0 );
-		def.AddAmmoType("SMG",		DMG_BULLET,	TRACER_LINE_AND_WHIZ, "sk_plr_dmg_smg", "sk_npc_dmg_smg", "sk_max_smg", BULLET_IMPULSE(200, 1225), 0 );
-		def.AddAmmoType("Shotgun",	DMG_BULLET | DMG_BUCKSHOT,	TRACER_LINE, "sk_plr_dmg_shotgun", "sk_npc_dmg_shotgun", "sk_max_shotgun", BULLET_IMPULSE(400, 1200), 0 );
+		def.AddAmmoType("FlareRound", DMG_BURN, TRACER_NONE, 4, 4, 10, 0, 0);
 	}
 
 	return &def;

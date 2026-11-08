@@ -46,6 +46,8 @@ $Project "Server (Sandbox)"
 			$Folder	"Weapons"
 			{
 				$File	"Sandbox\weapons\basesdkcombatweapon.cpp"
+				$File	"Sandbox\weapons\weapon_flaregun.cpp"
+				$File	"Sandbox\weapons\weapon_flaregun.h"
 				$File	"$SRCDIR\game\shared\Sandbox\weapons\basesdkcombatweapon_shared.cpp"
 			}
 		}

@@ -106,6 +106,7 @@
 #ifdef GAMEUI_UISYSTEM2_ENABLED
 #include "gameui.h"
 #endif
+#include "clienteffectprecachesystem.h"
 
 #ifdef GAMEUI_EMBEDDED
 	#if !defined( INFESTED_DLL )
@@ -960,6 +961,7 @@ bool InitGameSystems( CreateInterfaceFn appSystemFactory )
 	IGameSystem::Add( ClientLeafSystem() );
 	IGameSystem::Add( DetailObjectSystem() );
 	IGameSystem::Add( ViewportClientSystem() );
+	IGameSystem::Add( ClientEffectPrecacheSystem() );
 	IGameSystem::Add( g_pClientShadowMgr );
 	IGameSystem::Add( g_pColorCorrectionMgr );
 #ifdef GAMEUI_UISYSTEM2_ENABLED

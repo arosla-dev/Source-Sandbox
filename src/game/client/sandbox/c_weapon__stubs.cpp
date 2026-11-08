@@ -13,5 +13,5 @@
 
 STUB_WEAPON_CLASS( cycler_weapon, WeaponCycler, C_BaseCombatWeapon );
 STUB_WEAPON_CLASS( weapon_cubemap, WeaponCubemap, C_BaseCombatWeapon );
-
+STUB_WEAPON_CLASS( weapon_flaregun, Flaregun, C_BaseCombatWeapon );
 
