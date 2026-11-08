@@ -1,0 +1,20 @@
+$Project "client"
+{
+	"game\client\client_sandbox.vpc"	[$SANDBOX]
+}
+
+$Project "server"
+{
+	"game\server\server_sandbox.vpc"	[$SANDBOX]
+}
+
+
+$Project "missionchooser"
+{
+}
+
+
+$Project "shaderlib"
+{
+	"materialsystem\shaderlib\shaderlib.vpc"
+}

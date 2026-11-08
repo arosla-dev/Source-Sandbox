@@ -1,0 +1,9 @@
+"LightmappedGeneric"
+{
+	// Original shader: BaseTimesLightmapAlphaBlend
+	"$translucent" 1
+	"$basetexture" "Tools/toolshint"
+	"srgb?$basetexture" "Tools/toolshint-dx10"
+	"%compilehint" 1
+	"%keywords" "tools, sdk,  platform"
+}

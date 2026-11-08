@@ -1,0 +1,12 @@
+"LightmappedGeneric"
+{
+	// Original shader: BaseTimesLightmapAlphaBlend
+	"$translucent" 1
+	"$basetexture" "Tools/toolsclip"
+	"srgb?$basetexture" "Tools/toolsclip-dx10"
+	"%compileclip" 1
+	"$surfaceprop" "default_silent"
+	"%keywords" "tools, sdk,  platform"
+
+	//"$basetexturetransform" "center 1 1 scale 1 1 rotate 45 translate 0 0"
+}

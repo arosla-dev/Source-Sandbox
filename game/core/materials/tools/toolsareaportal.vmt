@@ -1,0 +1,9 @@
+"LightmappedGeneric"
+{
+	// Original shader: BaseTimesLightmapAlphaBlend
+	"$translucent" 1
+	"$basetexture" "Tools/toolsareaportal"
+	"srgb?$basetexture" "Tools/toolsareaportal-dx10"
+	"%compileNoLight" 1
+	"%keywords" "tools, sdk,  platform"
+}

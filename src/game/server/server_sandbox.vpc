@@ -1,0 +1,53 @@
+//-----------------------------------------------------------------------------
+//	SERVER_SANDBOX.VPC
+//
+//	Project Script
+//-----------------------------------------------------------------------------
+
+$Macro SRCDIR		"..\.."
+$Macro GAMENAME 	"Sandbox"
+
+$Include "$SRCDIR\game\server\server_base.vpc"
+
+$Configuration
+{
+	$Compiler
+	{
+		$AdditionalIncludeDirectories	"$BASE;.\hl2;$SRCDIR\game\shared\hl2;.\sandbox;.\multiplayer;$SRCDIR\game\shared\multiplayer;$SRCDIR\game\shared\sandbox"
+		$PreprocessorDefinitions		"$BASE;SWARM_DLL;TEMPLATE_DLL"
+	}
+}
+
+$Project "Server (Sandbox)"
+{
+	$Folder	"Source Files"
+	{
+		$Folder "Sandbox"
+		{
+			$File	"$SRCDIR\game\shared\Sandbox\my_shareddefs.h"
+			$File	"$SRCDIR\game\shared\Sandbox\sdk_gamemovement.cpp"
+			$File	"$SRCDIR\game\shared\Sandbox\sdk_gamerules_sp.h"
+			$File	"$SRCDIR\game\shared\Sandbox\sdk_gamerules_sp.cpp"
+			$File	"$SRCDIR\game\shared\Sandbox\sdk_player_shared.h"
+			$File	"$SRCDIR\game\shared\Sandbox\sdk_shareddefs.h"
+			$File	"$SRCDIR\game\shared\Sandbox\sdk_usermessages.cpp"
+			$File	"$SRCDIR\game\shared\Sandbox\sdk_weapon_parse.h"
+			$File	"$SRCDIR\game\shared\Sandbox\sdk_weapon_parse.cpp"
+			
+			$File	"Sandbox\player_pickup_controller.cpp"
+			$File	"Sandbox\sdk_client.cpp"
+			$File	"Sandbox\sdk_eventlog.cpp"
+			$File	"Sandbox\sdk_player.h"
+			$File	"Sandbox\sdk_player.cpp"
+			$File	"Sandbox\sdk_playermove.cpp"
+			$File	"Sandbox\test_entity.cpp"
+			$File	"Sandbox\weapon_cubemap.cpp"
+
+			$Folder	"Weapons"
+			{
+				$File	"Sandbox\weapons\basesdkcombatweapon.cpp"
+				$File	"$SRCDIR\game\shared\Sandbox\weapons\basesdkcombatweapon_shared.cpp"
+			}
+		}
+	}
+}

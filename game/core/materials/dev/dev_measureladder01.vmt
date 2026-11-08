@@ -1,0 +1,9 @@
+"LightmappedGeneric"
+{
+	// Original shader: BaseTimesLightmapAlphaBlend
+	"$translucent" 1
+	"$basetexture" "Dev/dev_measureladder01"
+	"$surfaceprop" "metal"
+	"%compileladder" 1
+	"%keywords" "c17downtown"
+}

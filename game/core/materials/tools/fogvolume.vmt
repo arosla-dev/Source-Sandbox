@@ -1,0 +1,6 @@
+"LightmappedGeneric"
+{
+	"$baseTexture" "tools/fogvolume"
+	"$translucent" 1
+	"%keywords" "tools, sdk,  platform"
+}

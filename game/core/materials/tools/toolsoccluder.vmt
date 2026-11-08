@@ -1,0 +1,8 @@
+"LightmappedGeneric"
+{
+	"$translucent" 1
+	"$basetexture" "Tools/toolsoccluder"
+	"srgb?$basetexture" "Tools/toolsoccluder-dx10"
+	"%compileNoLight" 1
+	"%keywords" "tools, sdk,  platform"
+}

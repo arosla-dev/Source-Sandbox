@@ -1,0 +1,135 @@
+//-----------------------------------------------------------------------------
+//	CLIENT_SANDBOX.VPC
+//
+//	Project Script
+//-----------------------------------------------------------------------------
+
+$Macro SRCDIR		"..\.."
+$Macro GAMENAME 	"sandbox"
+
+$Include "$SRCDIR\game\client\client_base.vpc"
+
+$Configuration
+{
+	$Compiler
+	{
+		$AdditionalIncludeDirectories	"$BASE;.\hl2;.\sandbox;.\sandbox\vgui;.\gameui;$SRCDIR\game\client\sandbox\gameui;..\statemachine;$SRCDIR\game\shared\multiplayer;.\multiplayer;$SRCDIR\game\shared\sandbox"
+		$PreprocessorDefinitions		"$BASE;SWARM_DLL;sandbox_DLL;GAMEUI_EMBEDDED;GAMEUI_EXPORTS"
+	}
+}
+
+$Project "Client (Sandbox)"
+{
+	$Folder "Source Files"
+	{
+		$Folder	"Sandbox"
+		{
+			$File	"$SRCDIR\game\shared\sandbox\sdk_gamemovement.cpp"
+			$File	"$SRCDIR\game\shared\sandbox\sdk_gamerules_sp.h"
+			$File	"$SRCDIR\game\shared\sandbox\sdk_gamerules_sp.cpp"
+			$File	"$SRCDIR\game\shared\sandbox\sdk_shareddefs.h"
+			$File	"$SRCDIR\game\shared\sandbox\sdk_usermessages.cpp"
+			$File	"$SRCDIR\game\shared\sandbox\sdk_weapon_parse.h"
+			$File	"$SRCDIR\game\shared\sandbox\sdk_weapon_parse.cpp"
+			
+			$File	"sandbox\clientmode_sdk.h"
+			$File	"sandbox\clientmode_sdk.cpp"
+			$File	"sandbox\c_sdk_player.h"
+			$File	"sandbox\c_sdk_player.cpp"
+			$File	"sandbox\c_weapon__stubs.cpp"
+			
+			$File	"sandbox\hud_crosshair_sandbox.cpp"
+			$File	"sandbox\hud_damageindicator.cpp"
+			$File	"sandbox\hud_developer.cpp"
+			$File	"sandbox\hud_weaponselection.cpp"
+			$File	"sandbox\sdk_fx.cpp"
+			$File	"sandbox\sdk_in_main.cpp"
+			$File	"sandbox\sdk_prediction.cpp"
+			$File	"sandbox\c_sdk_lesson.cpp"
+
+			$Folder	"Weapons"
+			{
+				$File	"sandbox\weapons\c_basesdkcombatweapon.cpp"
+				$File	"$SRCDIR\game\shared\sandbox\weapons\basesdkcombatweapon_shared.cpp"
+			}
+
+			$Folder	"VGUI"
+			{				
+				$File	"sandbox\vgui\nb_button.h"
+				$File	"sandbox\vgui\nb_header_footer.h"
+				$File	"sandbox\vgui\sdk_loading_panel.h"
+				$File	"sandbox\vgui\sdk_logo_panel.h"
+				$File	"sandbox\vgui\nb_button.cpp"
+				$File	"sandbox\vgui\nb_header_footer.cpp"
+				$File	"sandbox\vgui\sdk_loading_panel.cpp"
+				$File	"sandbox\vgui\sdk_logo_panel.cpp"
+				$File	"sandbox\vgui_rootpanel_sdk.cpp"
+			}
+		
+			$Folder	"GameUI"
+			{
+				$File	"sandbox\GameUI\basemodframe.h"
+				$File	"sandbox\GameUI\gamemodes.h"
+				$File	"sandbox\GameUI\optionsmousedialog.h"
+				$File	"sandbox\GameUI\UIGameData.h"
+				
+				$File	"sandbox\GameUI\vaddonassociation.h"
+				$File	"sandbox\GameUI\vaddons.h"
+				$File	"sandbox\GameUI\vattractscreen.h"
+				$File	"sandbox\GameUI\vaudio.h"
+				$File	"sandbox\GameUI\vaudiovideo.h"
+				$File	"sandbox\GameUI\vcustomcampaigns.h"
+				$File	"sandbox\GameUI\vdropdownmenu.h"
+				$File	"sandbox\GameUI\vflyoutmenu.h"
+				$File	"sandbox\GameUI\vfooterpanel.h"
+				$File	"sandbox\GameUI\vgenericconfirmation.h"
+				$File	"sandbox\GameUI\vgenericpanellist.h"
+				$File	"sandbox\GameUI\vgetlegacydata.h"
+				$File	"sandbox\GameUI\vhybridbutton.h"
+				$File	"sandbox\GameUI\vingamemainmenu.h"
+				$File	"sandbox\GameUI\vkeyboard.h"
+				$File	"sandbox\GameUI\vkeyboardmouse.h"
+				$File	"sandbox\GameUI\vloadingprogress.h"
+				$File	"sandbox\GameUI\vmainmenu.h"
+				$File	"sandbox\GameUI\vmouse.h"
+				$File	"sandbox\GameUI\vslidercontrol.h"
+				$File	"sandbox\GameUI\vtransitionscreen.h"
+				$File	"sandbox\GameUI\vvideo.h"
+				
+				$File	"sandbox\GameUI\basemodframe.cpp"
+				$File	"sandbox\GameUI\BaseModPanel.cpp"
+				$File	"sandbox\GameUI\gamemodes.cpp"
+				$File	"sandbox\GameUI\optionsmousedialog.cpp"
+				$File	"sandbox\GameUI\vaddonassociation.cpp"
+				$File	"sandbox\GameUI\vaddons.cpp"
+				$File	"sandbox\GameUI\vattractscreen.cpp"
+				$File	"sandbox\GameUI\vaudio.cpp"
+				$File	"sandbox\GameUI\vaudiovideo.cpp"
+				$File	"sandbox\GameUI\vcustomcampaigns.cpp"
+				$File	"sandbox\GameUI\vdropdownmenu.cpp"
+				$File	"sandbox\GameUI\vflyoutmenu.cpp"
+				$File	"sandbox\GameUI\vfooterpanel.cpp"
+				$File	"sandbox\GameUI\vgenericconfirmation.cpp"
+				$File	"sandbox\GameUI\vgenericpanellist.cpp"
+				$File	"sandbox\GameUI\vgetlegacydata.cpp"
+				$File	"sandbox\GameUI\vhybridbutton.cpp"
+				$File	"sandbox\GameUI\vingamemainmenu.cpp"
+				$File	"sandbox\GameUI\vkeyboard.cpp"
+				$File	"sandbox\GameUI\vkeyboardmouse.cpp"
+				$File	"sandbox\GameUI\vloadingprogress.cpp"
+				$File	"sandbox\GameUI\vmainmenu.cpp"
+				$File	"sandbox\GameUI\vmenubackground.cpp"
+				$File	"sandbox\GameUI\vmouse.cpp"
+				$File	"sandbox\GameUI\vslidercontrol.cpp"
+				$File	"sandbox\GameUI\vtransitionscreen.cpp"
+				$File	"sandbox\GameUI\vvideo.cpp"
+				$File	"sandbox\GameUI\UIGameData.cpp"
+			}
+		}
+	}
+
+	$Folder	"Link Libraries"
+	{
+		$Lib "$LIBPUBLIC\vpklib"
+	}
+}

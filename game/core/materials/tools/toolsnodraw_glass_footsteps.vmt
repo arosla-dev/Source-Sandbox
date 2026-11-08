@@ -1,0 +1,8 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "Tools/toolsnodraw_glass_footsteps"
+	"$translucent" 1
+	"%noportal" 1
+	"$surfaceprop" "glass"
+	"%keywords" "tools, sdk,  platform"
+}
