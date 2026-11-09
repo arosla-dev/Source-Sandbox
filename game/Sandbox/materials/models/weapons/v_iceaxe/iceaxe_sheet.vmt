@@ -1,0 +1,13 @@
+"VertexLitGeneric"
+{
+	// Original shader: VertexLitTexture
+	"$basetexture" "models/Weapons/V_iceaxe/iceaxe_sheet"
+	"$bumpmap" "models/weapons/V_iceaxe/iceaxe_sheet_normal"
+	"$envmap" "env_cubemap"
+	
+	"$phong" "1"
+	"$phongexponent" "100"
+	"$phongboost"	"6"
+	"$phongfresnelranges"	"[0.05 0.5 1]"
+
+}
