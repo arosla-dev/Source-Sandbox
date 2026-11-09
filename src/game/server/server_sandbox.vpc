@@ -42,6 +42,7 @@ $Project "Server (Sandbox)"
 			$File	"Sandbox\sdk_playermove.cpp"
 			$File	"Sandbox\test_entity.cpp"
 			$File	"Sandbox\weapon_cubemap.cpp"
+			$File	"Sandbox\npc_hover_turret.cpp"
 
 			$Folder	"Weapons"
 			{

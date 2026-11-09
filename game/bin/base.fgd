@@ -6990,3 +6990,42 @@
 [
 	input ChangeLevel(string) : "Changes the level to the map name supplied as a parameter."
 ]
+
+//new
+@NPCClass base(BaseNPC) studio("models/npcs/hover_turret.mdl") = npc_hover_turret : "Hover Turret"
+[
+	canpushplayer(boolean) : "Can Push Player" : 1 : "Whether the turret should push the player back when hitting him with bullets."
+
+	sentryRotateSpeed(float) : "Sentry Rotate Speed" : "0" : "Speed that the turret rotates around it's center."
+	attachTarget(target_destination) : "Attach target" : "" : "Entity that we are attached to with a power cord."
+	
+	output OnDeath(void)		:	"Fired when this turret get's detached from its tether."
+]
+
+//weapons
+
+@BaseClass color(0 0 200) base(Targetname, Angles) sphere(fademindist) sphere(fademaxdist) = Weapon
+[
+	spawnflags(Flags) =
+	[
+		1 : "Start constrained" : 0
+		2 : "Deny player pickup (reserve for NPC)" : 0
+		4 : "Not puntable by Gravity Gun" : 0
+	]
+
+	output OnPlayerUse(void) : "Fires when the player +uses this weapon"
+	output OnPlayerPickup(void) : "Fires when the player picks up this weapon"
+	output OnNPCPickup(void) : "Fires when an NPC picks up this weapon"
+	output OnCacheInteraction(void) : "Fires when the player 'proves' they've found this weapon. Fires on: Player Touch, +USE pickup, Physcannon pickup, Physcannon punt."
+
+	fademindist(float) : "Start Fade Dist/Pixels" : -1 : "Distance at which the prop starts to fade (<0 = use fademaxdist). If 'Screen Space Fade' is selected, this represents the number of pixels wide covered by the prop when it starts to fade."
+	fademaxdist(float) : "End Fade Dist/Pixels" : 0 : "Maximum distance at which the prop is visible (0 = don't fade out). If 'Screen Space Fade' is selected, this represents the *minimum* number of pixels wide covered by the prop when it fades."
+	fadescale(float) : "Fade Scale" : 1 : "If you specify a fade in the worldspawn, or if the engine is running under dx7, then the engine will forcibly fade out props even if fademindist/fademaxdist isn't specified." +
+												 " This scale factor gives you some control over the fade. Using 0 here turns off the forcible fades." +
+]
+
+@PointClass base(Weapon) studio("models/weapons/w_flaregun.mdl") = weapon_flaregun : "Flaregun" []
+@PointClass base(Weapon) studio("models/weapons/w_crowbar.mdl") = weapon_iceaxe : "Iceaxe" []
+@PointClass base(Weapon) studio("models/weapons/w_phys.mdl") = weapon_physgun : "Physics Gun" []
+@PointClass base(Weapon) studio("models/weapons/w_binoculars.mdl") = weapon_binoculars : "Binocular" []
+@PointClass base(Weapon) studio("models/weapons/w_camera.mdl") = weapon_camera : "Camera" []

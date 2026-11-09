@@ -194,6 +194,7 @@ $Project
 		$File	"ai_initutils.h"
 		$File	"AI_Interest_Target.cpp"
 		$File	"AI_Interest_Target.h"
+		$File	"AI_interactions.h"
 		$File	"ai_link.cpp"
 		$File	"ai_link.h"
 		$File	"ai_localnavigator.cpp"
