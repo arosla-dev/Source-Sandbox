@@ -99,7 +99,7 @@ LINK_ENTITY_TO_CLASS(prop_liquid_blob, CLiquidBlob);
 void CLiquidBlob::Precache()
 {
 	BaseClass::Precache();
-	PrecacheModel("models/spitball_small.mdl");
+	PrecacheModel("models/weapons/rifleshell.mdl");
 	UTIL_PrecacheOther("entityflame");
 }
 
@@ -110,8 +110,8 @@ void CLiquidBlob::Spawn(void)
 	SetMoveType(MOVETYPE_NONE);
 	SetSolidFlags(FSOLID_NOT_STANDABLE);
 
-	SetModel("models/spitball_small.mdl");
 	AddEffects(EF_NODRAW);
+	SetModel("models/weapons/rifleshell.mdl");
 
 	//UTIL_SetSize( this, vec3_origin, vec3_origin );
 
@@ -181,6 +181,8 @@ void CLiquidBlob::Ignite(float flFlameLifetime, bool bNPCOnly, float flSize, boo
 {
 	BaseClass::Ignite(flFlameLifetime, bNPCOnly, 24, bCalledByLevelDesigner);
 	IgniteUseCheapEffect(true);
+
+	FindWaterBlobs();
 }
 
 void CLiquidBlob::InputActivateLiquid(inputdata_t& data)
@@ -208,6 +210,9 @@ void CLiquidBlob::FindWaterBlobsThink(void)
 	while ((pEntity = gEntList.FindEntityInSphere(pEntity, WorldSpaceCenter(), BoundingRadius())) != NULL)
 	{
 		CLiquidBlob* pLiquidBlob = dynamic_cast<CLiquidBlob*>(pEntity);
+
+		if (pLiquidBlob == NULL)
+			continue;
 
 		if (IsOnFire() != pLiquidBlob->IsOnFire())
 		{
@@ -269,6 +274,24 @@ int CLiquidBlob::OnTakeDamage(const CTakeDamageInfo& info)
 		return 0;
 
 	return BaseClass::OnTakeDamage(info);
+}
+
+void CreateLiquid(Vector vOrigin, Vector vDirection, int iType, float flTime)
+{
+	CLiquidBlob* pLiquid = static_cast<CLiquidBlob*>(CreateEntityByName("prop_liquid_blob"));
+	if (pLiquid != NULL)
+	{
+
+		// Set the model
+		pLiquid->SetAbsOrigin(vOrigin - (vDirection * 4));
+		pLiquid->SetAbsAngles(vec3_angle);
+		pLiquid->Spawn();
+
+		pLiquid->m_vDirection = vDirection;
+
+		DispatchSpawn(pLiquid);
+		g_EventQueue.AddEvent(pLiquid, "ActivateLiquid", flTime, pLiquid, pLiquid);
+	}
 }
 
 //-----------------------------------------------------------------------------
@@ -542,24 +565,6 @@ public:
 protected:
 	IHandleEntity *m_pIgnoreEnt;
 };
-
-void CreateLiquid(Vector vOrigin, Vector vDirection, int iType, float flTime)
-{
-	CLiquidBlob* pLiquid = static_cast<CLiquidBlob*>(CreateEntityByName("prop_liquid_blob"));
-	if (pLiquid != NULL)
-	{
-
-		// Set the model
-		pLiquid->SetAbsOrigin(vOrigin - (vDirection * 4));
-		pLiquid->SetAbsAngles(vec3_angle);
-		pLiquid->Spawn();
-
-		pLiquid->m_vDirection = vDirection;
-
-		DispatchSpawn(pLiquid);
-		g_EventQueue.AddEvent(pLiquid, "ActivateLiquid", flTime, pLiquid, pLiquid);
-	}
-}
 
 void ShootLiquid( CBasePlayer *pPlayer )
 {
