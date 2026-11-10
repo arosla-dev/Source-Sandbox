@@ -54,6 +54,19 @@ bool CSDKGameRules::ShouldCollide( int collisionGroup0, int collisionGroup1 )
 		collisionGroup1 = COLLISION_GROUP_PLAYER;
 	}
 
+	if (collisionGroup1 == COLLISION_GROUP_FUEL && collisionGroup0 != COLLISION_GROUP_FIRE)
+		return false;
+
+	if (collisionGroup1 == COLLISION_GROUP_FIRE)
+	{
+		if (collisionGroup0 == COLLISION_GROUP_WEAPON ||
+			collisionGroup0 == COLLISION_GROUP_PROJECTILE ||
+			collisionGroup0 == COLLISION_GROUP_FIRE)
+		{
+			return false;
+		}
+	}
+
 	//If collisionGroup0 is not a player then NPC_ACTOR behaves just like an NPC.
 	if ( collisionGroup1 == COLLISION_GROUP_NPC_ACTOR && collisionGroup0 != COLLISION_GROUP_PLAYER )
 	{
@@ -93,6 +106,7 @@ CAmmoDef* GetAmmoDef()
 	{
 		bInitted = true;
 		def.AddAmmoType("FlareRound", DMG_BURN, TRACER_NONE, 4, 4, 10, 0, 0);
+		def.AddAmmoType("Fuel", DMG_BURN, TRACER_NONE, 0, 0, 999, 0, 0);
 	}
 
 	return &def;

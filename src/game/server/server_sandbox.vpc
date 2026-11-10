@@ -43,6 +43,7 @@ $Project "Server (Sandbox)"
 			$File	"Sandbox\test_entity.cpp"
 			$File	"Sandbox\weapon_cubemap.cpp"
 			$File	"Sandbox\npc_hover_turret.cpp"
+			$File	"Sandbox\prop_gaspump.cpp"
 
 			$Folder	"Weapons"
 			{
@@ -54,6 +55,7 @@ $Project "Server (Sandbox)"
 				$File	"Sandbox\weapons\weapon_oicw.cpp"
 				$File	"Sandbox\weapons\weapon_oicw.h"
 				$File	"$SRCDIR\game\shared\Sandbox\weapons\basesdkcombatweapon_shared.cpp"
+				$File	"Sandbox\weapons\weapon_flamethrower.cpp"
 			}
 		}
 	}

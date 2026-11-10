@@ -203,22 +203,24 @@
 								"2_width"		"224"
 							}
 						}
-						"0_splitter_pos"		"200.000000"
-						"1_splitter_pos"		"400.000000"
+						"0_splitter_pos"		"238.499969"
+						"1_splitter_pos"		"477.000000"
 					}
 				}
 				"child1"
 				{
 					"2D3DSplitter"
 					{
-						"0_splitter_pos"		"200.000000"
-						"1_splitter_pos"		"400.000000"
+						"0_splitter_pos"		"238.499969"
+						"1_splitter_pos"		"477.000000"
 					}
 				}
 				"0_splitter_pos"		"499.000000"
 				"1_splitter_pos"		"692.000000"
 			}
 			"filter"		"flame"
+			"folderfilter"		"particle\\water_splash\\"
+			"mod"		"sandbox"
 		}
 		"vmtpickerframe.res"
 		{
@@ -243,27 +245,29 @@
 									"2_width"		"224"
 								}
 							}
-							"0_splitter_pos"		"200.000000"
-							"1_splitter_pos"		"400.000000"
+							"0_splitter_pos"		"238.499969"
+							"1_splitter_pos"		"477.000000"
 						}
 					}
 					"child1"
 					{
 						"2D3DSplitter"
 						{
-							"0_splitter_pos"		"200.000000"
-							"1_splitter_pos"		"400.000000"
+							"0_splitter_pos"		"238.499969"
+							"1_splitter_pos"		"477.000000"
 						}
 					}
 					"0_splitter_pos"		"499.000000"
 					"1_splitter_pos"		"692.000000"
 				}
 				"filter"		"flame"
+				"folderfilter"		"particle\\water_splash\\"
+				"mod"		"sandbox"
 			}
-			"xpos"		"454"
-			"ypos"		"220"
+			"xpos"		"166"
+			"ypos"		"154"
 			"wide"		"692"
-			"tall"		"460"
+			"tall"		"537"
 		}
 		"particlefunctionpicker.res"
 		{
@@ -324,6 +328,21 @@
 			"xpos"		"562"
 			"ypos"		"260"
 			"wide"		"475"
+			"tall"		"380"
+		}
+		"perforcefilelist.res"
+		{
+			"Browser"
+			{
+				"lastBarWidth"		"552"
+				"0_hidden"		"0"
+				"0_width"		"52"
+				"1_hidden"		"0"
+				"1_width"		"501"
+			}
+			"xpos"		"222"
+			"ypos"		"194"
+			"wide"		"580"
 			"tall"		"380"
 		}
 	}

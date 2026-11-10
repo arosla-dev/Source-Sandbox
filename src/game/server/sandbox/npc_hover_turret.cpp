@@ -1400,8 +1400,6 @@ void CNPC_HoverTurret::Precache( void )
 		PrecacheScriptSound( g_HoverTurretTalkNames[ iTalkScript ] );
 	}
 
-	UTIL_PrecacheOther( "prop_glass_futbol" );
-
 	BaseClass::Precache();
 }
 

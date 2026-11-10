@@ -12,24 +12,17 @@
 #include "basecombatcharacter.h"
 #include "AI_BaseNPC.h"
 #include "player.h"
-#include "weapon_ar2.h"
-#include "grenade_ar2.h"
+#include "weapon_oicw.h"
 #include "gamerules.h"
 #include "game.h"
 #include "in_buttons.h"
 #include "AI_Memory.h"
 #include "soundent.h"
-#include "hl2_player.h"
+#include "player.h"
 #include "EntityFlame.h"
 #include "weapon_flaregun.h"
 #include "te_effect_dispatch.h"
-#include "prop_combine_ball.h"
 #include "beam_shared.h"
-#ifdef HL2_EPISODIC 
-	#include "npc_combine_episodic.h"
-#else
-	#include "npc_combine.h"
-#endif//HL2_EPISODIC
 #include "rumble_shared.h"
 
 // memdbgon must be the last include file in a .cpp file!!!

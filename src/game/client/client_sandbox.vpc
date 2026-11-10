@@ -39,6 +39,7 @@ $Project "Client (Sandbox)"
 			$File	"sandbox\c_weapon__stubs.cpp"
 			$File	"sandbox\c_te_flare.cpp"
 			$File	"sandbox\c_npc_hover_turret.cpp"
+			$File	"sandbox\c_prop_gaspump.cpp"
 			
 			$File	"sandbox\hud_crosshair_sandbox.cpp"
 			$File	"sandbox\hud_damageindicator.cpp"
@@ -48,6 +49,7 @@ $Project "Client (Sandbox)"
 			$File	"sandbox\sdk_in_main.cpp"
 			$File	"sandbox\sdk_prediction.cpp"
 			$File	"sandbox\c_sdk_lesson.cpp"
+			$File	"sandbox\weapons\c_weapon_flamethrower.cpp"
 
 			$Folder	"Weapons"
 			{
