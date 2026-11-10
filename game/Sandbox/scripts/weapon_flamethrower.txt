@@ -48,18 +48,5 @@ WeaponData
 				"width"		"32"
 				"height"	"32"
 		}
-		"crosshair"
-		{
-				"font"		"Crosshairs"
-				"character"	"Q"
-		}
-		"autoaim"
-		{
-				"file"		"sprites/crosshairs"
-				"x"			"0"
-				"y"			"48"
-				"width"		"24"
-				"height"	"24"
-		}
 	}
 }

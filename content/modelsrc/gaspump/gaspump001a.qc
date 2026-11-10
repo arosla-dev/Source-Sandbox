@@ -21,7 +21,7 @@ $contents "solid"
 
 $illumposition 0 0 31.95
 
-$cdmaterials "models\"
+$cdmaterials "models\gaspump\"
 
 $cbox 0 0 0 0 0 0
 

@@ -439,24 +439,13 @@
 		6:	"item_ammo_smg1_large"	
 		7:	"item_ammo_ar2"			
 		8:	"item_ammo_ar2_large"	
-		9:	"item_box_buckshot"		
-		10:	"item_flare_round"			
-		11:	"item_box_flare_rounds"		
-		12:	"item_ml_grenade"		
-		13:	"item_smg1_grenade"			
-		14:	"item_box_sniper_rounds"	
-		15:	"unused1"			
-		16:	"weapon_stunstick"		
-		17:	"weapon_ar1"				
-		18:	"weapon_ar2"			
-		19:	"unused2"				
-		20:	"weapon_ml"					
-		21:	"weapon_smg1"				
-		22:	"weapon_smg2"				
-		23:	"weapon_slam"				
-		24:	"weapon_shotgun"			
-		25:	"weapon_molotov"
-		26:	"item_dynamic_resupply"							
+		9:	"item_flare_round"		
+		10:	"item_box_flare_rounds"
+		11:	"weapon_iceaxe"		
+		12:	"weapon_flaregun"				
+		13:	"weapon_binoculars"			
+		14:	"weapon_camera"				
+		15:	"weapon_smg"										
 	]
 	explodemagnitude(integer) : "Explode Magnitude" : 0 : "If non-zero, when this entity breaks it will create an explosion that causes the specified amount of damage."
 	pressuredelay(float) : "Pressure Delay" : 0 : "Delay, in seconds, after 'broken' by pressure before breaking apart (allows for sound to play before breaking apart)."
@@ -7029,3 +7018,7 @@
 @PointClass base(Weapon) studio("models/weapons/w_phys.mdl") = weapon_physgun : "Physics Gun" []
 @PointClass base(Weapon) studio("models/weapons/w_binoculars.mdl") = weapon_binoculars : "Binocular" []
 @PointClass base(Weapon) studio("models/weapons/w_camera.mdl") = weapon_camera : "Camera" []
+@PointClass base(Weapon) studio("models/weapons/w_smg.mdl") = weapon_smg : "Submachine Gun" []
+@PointClass base(Weapon) studio("models/weapons/w_weaponizer.mdl") = weapon_flamethrower : "Flmaethrower" []
+
+@PointClass base(Targetname, Angles) studio("models/gaspump.mdl") = prop_gaspump []

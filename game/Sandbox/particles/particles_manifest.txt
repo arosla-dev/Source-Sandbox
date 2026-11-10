@@ -22,6 +22,6 @@ particles_manifest
 	"file"		"particles/weapon_fx_hl2.pcf"
 	"file"		"particles/impact_fx.pcf"
 	"file"		"particles/paint_spray_fx.pcf"
-
+	"file"		"particles/flamethrower.pcf"
 
 }

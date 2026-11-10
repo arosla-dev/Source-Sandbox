@@ -198,7 +198,7 @@ void C_WeaponFlamethrower::StartAttackParticleEffect( bool bFlameThrower )
 		if ( !m_pFireEffect.IsValid() )
 		{
 			// Start the appropriate particle effect
-			const char *pszParticleEffect = "fuel_hose";
+			const char *pszParticleEffect = "flamethrower";
 
 			if ( GetEffectViewModel() )
 			{

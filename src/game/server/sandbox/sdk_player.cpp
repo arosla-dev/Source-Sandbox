@@ -867,6 +867,17 @@ void CSDKPlayer::CheatImpulseCommands( int iImpulse )
 void CSDKPlayer::GiveAllItems( void )
 {
 	// Impluse 101
+	CBasePlayer::GiveAmmo(999, "Fuel");
+	CBasePlayer::GiveAmmo(10, "FlareRound");
+	CBasePlayer::GiveAmmo(150, "SMG");
+
+	GiveNamedItem("weapon_iceaxe");
+	GiveNamedItem("weapon_flaregun");
+	GiveNamedItem("weapon_smg");
+	GiveNamedItem("weapon_flamethrower");
+	GiveNamedItem("weapon_camera");
+	GiveNamedItem("weapon_binoculars");
+	GiveNamedItem("weapon_oicw"); //under question
 }
 
 void CSDKPlayer::GiveDefaultItems( void )

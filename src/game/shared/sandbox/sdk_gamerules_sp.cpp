@@ -107,6 +107,7 @@ CAmmoDef* GetAmmoDef()
 		bInitted = true;
 		def.AddAmmoType("FlareRound", DMG_BURN, TRACER_NONE, 4, 4, 10, 0, 0);
 		def.AddAmmoType("Fuel", DMG_BURN, TRACER_NONE, 0, 0, 999, 0, 0);
+		def.AddAmmoType("SMG", DMG_BULLET, TRACER_LINE_AND_WHIZ, 4, 4, 150, BULLET_IMPULSE(200, 1225), 0);
 	}
 
 	return &def;
