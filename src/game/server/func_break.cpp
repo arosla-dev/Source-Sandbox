@@ -52,24 +52,13 @@ const char *CBreakable::pSpawnObjects[] =
 	"item_ammo_smg1_large",		// 6
 	"item_ammo_ar2",			// 7
 	"item_ammo_ar2_large",		// 8
-	"item_box_buckshot",		// 9
-	"item_flare_round",			// 10
-	"item_box_flare_rounds",	// 11
-	"item_rpg_round",			// 12
-	"unused (item_smg1_grenade) 13",// 13
-	"item_box_sniper_rounds",	// 14
-	"unused (???) 15",			// 15
-	"weapon_stunstick",			// 16
-	"unused (weapon_ar1) 17",	// 17
-	"weapon_ar2",				// 18
-	"unused (???) 19",				// 19
-	"weapon_rpg",				// 20
-	"weapon_smg1",				// 21
-	"unused (weapon_smg2) 22",	// 22
-	"unused (weapon_slam) 23",	// 23
-	"weapon_shotgun",			// 24
-	"unused (weapon_molotov) 25",// 25
-	"item_dynamic_resupply",	// 26
+	"item_flare_round",			// 9
+	"item_box_flare_rounds",	// 10
+	"weapon_iceaxe",			// 11
+	"weapon_flaregun",			// 12
+	"weapon_binoculars",		// 13
+	"weapon_camera",			// 14
+	"weapon_smg",				// 15
 };
 
 const char *pFGDPropData[] =

@@ -8,7 +8,7 @@
 #include "cbase.h"
 #include "player.h"
 #include "gamerules.h"
-#include "basecombatweapon.h"
+#include "basesdkcombatweapon.h"
 #include "decals.h"
 #include "soundenvelope.h"
 #include "IEffects.h"

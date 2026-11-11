@@ -14,7 +14,7 @@
 
 #include "cbase.h"
 #include "NPCEvent.h"
-#include "basecombatweapon.h"
+#include "basesdkcombatweapon.h"
 #include "basecombatcharacter.h"
 #include "AI_BaseNPC.h"
 #include "player.h"
@@ -59,10 +59,10 @@ static int g_nZoomFOV[] =
 };
 
 
-class CWeaponBinoculars : public CBaseCombatWeapon
+class CWeaponBinoculars : public CBaseSDKCombatWeapon
 {
 public:
-	DECLARE_CLASS( CWeaponBinoculars, CBaseCombatWeapon);
+	DECLARE_CLASS( CWeaponBinoculars, CBaseSDKCombatWeapon);
 
 	DECLARE_SERVERCLASS();
 
@@ -71,7 +71,7 @@ public:
 	~CWeaponBinoculars( void );
 	void Precache( void );
 	int CapabilitiesGet( void );
-	bool Holster( CBaseCombatWeapon *pSwitchingTo = NULL );
+	bool Holster(CBaseSDKCombatWeapon*pSwitchingTo = NULL );
 	void ItemPostFrame( void );
 	void Zoom( ZoomMode_t eMode );
 	bool Deploy( void );
@@ -221,7 +221,7 @@ int CWeaponBinoculars::CapabilitiesGet( void )
 //-----------------------------------------------------------------------------
 // Purpose: Turns off the zoom when the binoculars are holstered.
 //-----------------------------------------------------------------------------
-bool CWeaponBinoculars::Holster( CBaseCombatWeapon *pSwitchingTo )
+bool CWeaponBinoculars::Holster(CBaseSDKCombatWeapon*pSwitchingTo )
 {
 	CBasePlayer *pPlayer = ToBasePlayer( GetOwner() );
 	if ( pPlayer != NULL )

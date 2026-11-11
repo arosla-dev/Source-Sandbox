@@ -7,7 +7,7 @@
 #include "cbase.h"
 #include "triggers.h"
 #include "soundenvelope.h"
-#include "basecombatweapon.h"
+#include "basesdkcombatweapon.h"
 #include "soundent.h"
 #include "ai_basenpc.h"
 #include "fire.h"
@@ -328,9 +328,9 @@ private:
 //-----------------------------------------------------------------------------
 // Flame thrower weapon 
 //-----------------------------------------------------------------------------
-class CWeaponFlamethrower : public CBaseCombatWeapon
+class CWeaponFlamethrower : public CBaseSDKCombatWeapon
 {
-	DECLARE_CLASS( CWeaponFlamethrower, CBaseCombatWeapon );
+	DECLARE_CLASS( CWeaponFlamethrower, CBaseSDKCombatWeapon);
 	DECLARE_SERVERCLASS();
 	DECLARE_DATADESC();
 
@@ -494,38 +494,66 @@ Vector CWeaponFlamethrower::GetMuzzlePosHelper( bool bVisualPos )
 //-----------------------------------------------------------------------------
 //
 //-----------------------------------------------------------------------------
-void CWeaponFlamethrower::ShootFlames( )
+void CWeaponFlamethrower::ShootFlames()
 {
-	CBasePlayer *pOwner = ToBasePlayer( GetOwner() );
+	CBasePlayer* pOwner = ToBasePlayer(GetOwner());
 
-	if ( pOwner == NULL )
+	if (pOwner == NULL)
 		return;
 
 	//Don't fire fire underwater.
-	if ( pOwner->GetWaterLevel() == 3 )
+	if (pOwner->GetWaterLevel() == 3)
 		return;
 
-	if ( m_flNextWarningSound <= gpGlobals->curtime )
+	m_bFiringPrimary = true;
+
+	trace_t tr;
+	Vector forward;
+	pOwner->EyeVectors(&forward);
+
+	Vector start = pOwner->Weapon_ShootPosition();
+	float testLength = 256.0f;
+	Vector end = start + forward * testLength;
+
+	UTIL_TraceHull(start, end, Vector(-2, -2, -2), Vector(2, 2, 2), MASK_SHOT, pOwner, COLLISION_GROUP_NONE, &tr);
+
+	if (tr.m_pEnt != NULL)
 	{
-		CSoundEnt::InsertSound( SOUND_THUMPER | SOUND_DANGER | SOUND_CONTEXT_FROM_FIRE, pOwner->GetAbsOrigin(), 384, 1.0f, this );
+		tr.m_pEnt->TakeDamage(CTakeDamageInfo(this, pOwner, 2, DMG_BURN | DMG_DIRECT));
+
+		CBaseAnimating* pEnt = tr.m_pEnt->GetBaseAnimating();
+		if (pEnt != NULL)
+		{
+			CAI_BaseNPC* pNPC = pEnt->MyNPCPointer();
+			if (pNPC && pNPC->AllowedToIgnite())
+			{
+				float flLength = (float)(pEnt->GetMaxHealth() * 1.0f) / FLAME_DIRECT_DAMAGE_PER_SEC;
+				pEnt->Ignite(flLength, false);
+			}
+		}
+	}
+
+	if (m_flNextWarningSound <= gpGlobals->curtime)
+	{
+		CSoundEnt::InsertSound(SOUND_THUMPER | SOUND_DANGER | SOUND_CONTEXT_FROM_FIRE, pOwner->GetAbsOrigin(), 384, 1.0f, this);
 		m_flNextWarningSound = gpGlobals->curtime + 1.0f;
 	}
-	
-	if ( m_pFiringLoop == NULL )
+
+	if (m_pFiringLoop == NULL)
 	{
-		EmitSound( "Weapon_FlameThrower.FireStart" );
+		EmitSound("Weapon_FlameThrower.FireStart");
 
-		CSoundEnvelopeController &controller = CSoundEnvelopeController::GetController();
+		CSoundEnvelopeController& controller = CSoundEnvelopeController::GetController();
 
-		CPASAttenuationFilter filter( this );
-		m_pFiringLoop = controller.SoundCreate( filter, entindex(), "Weapon_FlameThrower.FireLoop" );
-		controller.Play( m_pFiringLoop, 0.0, 100 );
-		controller.SoundChangeVolume( m_pFiringLoop, 1.0, 3.4 );
+		CPASAttenuationFilter filter(this);
+		m_pFiringLoop = controller.SoundCreate(filter, entindex(), "Weapon_FlameThrower.FireLoop");
+		controller.Play(m_pFiringLoop, 0.0, 100);
+		controller.SoundChangeVolume(m_pFiringLoop, 1.0, 3.4);
 	}
 
 	// create the flame entity
 	float flDamage = flamethrower_fire_damage.GetFloat();
-	CFlamethrowerFlame::Create( GetFlameOriginPos(), pOwner->EyeAngles(), this, DMG_BURN | DMG_DIRECT, flDamage );
+	CFlamethrowerFlame::Create(GetFlameOriginPos(), pOwner->EyeAngles(), this, DMG_BURN | DMG_DIRECT, flDamage);
 }
 
 //-----------------------------------------------------------------------------

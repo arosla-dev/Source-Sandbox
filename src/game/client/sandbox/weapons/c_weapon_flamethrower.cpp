@@ -6,7 +6,7 @@
 
 #include "cbase.h"
 #include "c_weapon__stubs.h"
-#include "c_basecombatweapon.h"
+#include "c_basesdkcombatweapon.h"
 #include "fx.h"
 #include "particles_localspace.h"
 #include "view.h"
@@ -18,9 +18,9 @@
 
 
 
-class C_WeaponFlamethrower: public C_BaseCombatWeapon
+class C_WeaponFlamethrower: public C_BaseSDKCombatWeapon
 {
-	DECLARE_CLASS( C_WeaponFlamethrower, C_BaseCombatWeapon );
+	DECLARE_CLASS( C_WeaponFlamethrower, C_BaseSDKCombatWeapon);
 public:
 	C_WeaponFlamethrower( void );
 

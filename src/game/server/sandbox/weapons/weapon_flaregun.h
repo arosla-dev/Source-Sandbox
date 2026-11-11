@@ -90,10 +90,10 @@ public:
 //---------------------
 // Flaregun
 //---------------------
-class CFlaregun:public CBaseCombatWeapon
+class CFlaregun:public CBaseSDKCombatWeapon
 {
 public:
-	DECLARE_CLASS( CFlaregun, CBaseCombatWeapon );
+	DECLARE_CLASS( CFlaregun, CBaseSDKCombatWeapon);
 
 	DECLARE_SERVERCLASS();
 
