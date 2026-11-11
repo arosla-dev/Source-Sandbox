@@ -54,6 +54,8 @@ $Project
 		$File	"ai_addon.h"
 		$File	"ai_agent.cpp"
 		$File	"ai_agent.h"
+		$File 	"ai_behavior_actbusy.cpp"
+		$File 	"ai_behavior_actbusy.h"
 		$File	"ai_behavior_fightfromcover.cpp"
 		$File	"ai_behavior_fightfromcover.h"
 		$File	"ai_behavior_template.h"

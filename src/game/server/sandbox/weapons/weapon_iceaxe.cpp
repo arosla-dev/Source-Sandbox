@@ -19,11 +19,11 @@
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
 
-ConVar    sk_plr_dmg_iceaxe("sk_plr_dmg_iceaxe", "0");
-ConVar    sk_npc_dmg_iceaxe("sk_npc_dmg_iceaxe", "0");
+ConVar    sk_plr_dmg_iceaxe("sk_plr_dmg_iceaxe", "4");
+ConVar    sk_npc_dmg_iceaxe("sk_npc_dmg_iceaxe", "4");
 
-#define	ICEAXE_RANGE	75.0f
-#define	ICEAXE_REFIRE	0.4f
+#define	ICEAXE_RANGE	60.0f
+#define	ICEAXE_REFIRE	0.25f
 
 //-----------------------------------------------------------------------------
 // CWeaponCrowbar
